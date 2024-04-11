@@ -16,8 +16,7 @@ import java.util.List;
 @RestController
 public class CommonCodeController {
 
-    @Autowired
-    CommonCodeService commonCodeService;
+    @Autowired CommonCodeService commonCodeService;
 
     @GetMapping("/r/commonCode/mixed/{pageNumber}/{pk_id}")
     public ResponseEntity<HashMap<String, Object>> mixed(@PathVariable("pageNumber") Integer pageNumber,
