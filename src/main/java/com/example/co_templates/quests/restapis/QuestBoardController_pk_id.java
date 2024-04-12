@@ -24,8 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class QuestBoardController_pk_id {
 
-    @Autowired
-    QuestBoardService boardService;
+    @Autowired QuestBoardService boardService;
 
     @GetMapping("/q/r/pk_id/mixed/{pageNumber}/{pk_id}")
     public ResponseEntity<HashMap<String, Object>> mixed(@PathVariable("pageNumber") Integer pageNumber,
@@ -39,7 +38,6 @@ public class QuestBoardController_pk_id {
         requestParams.put("pageNumber", pageNumber);
         requestParams.put("pk_id", pkId);
         resultMap.put("requestParams", requestParams);
-        
         return ResponseEntity.ok().body(resultMap);
     }
 
@@ -67,4 +65,5 @@ public class QuestBoardController_pk_id {
         int result = boardService.insert(title, contents);
         return ResponseEntity.ok().body(result);
     }
+
 }

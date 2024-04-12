@@ -18,11 +18,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class QuestBoardService_pk_id {
+    
     public HashMap<String, Object> mixed(Integer pageNumber, Integer pkid, String title, String contents) {
         HashMap<String, Object> resultMap = new HashMap<>();
         resultMap.put("list", this.list(pageNumber));
         resultMap.put("view", this.view(pkid));
         resultMap.put("delete", this.delete(pkid));
+        int insertResult = insert(title, contents);
+        resultMap.put("insert", insertResult);
         return resultMap;
     }
 
